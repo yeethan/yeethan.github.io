@@ -508,7 +508,7 @@ img {
 			.attr("y", function () { return 225; })		
 		
 	</script>
-
+<br /><br /><br /><br />
 <p>Separate hourly boxplots for adverse weather (rain or snow) vs sunny weather was also created for each hour.</p>
 <pre class="r"><code>ggplot(data=taxiWeather[taxiWeather$holWkend==&quot;Weekday&quot;,], aes(x=substring(interval, 12,13), y=cabsOccupied, fill=as.factor( rainSnowStatus==0 ) ) ) +
   geom_boxplot() +      
