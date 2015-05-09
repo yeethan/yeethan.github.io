@@ -102,7 +102,7 @@
 			.filtswitch > [type="checkbox"]:not(:checked) + label + .filtswitch-knob {
 			  top: 0;
 			  width: 20px;
-			  height: 15px;
+			  height: 18px;
 			  border-radius: 20px;
 			  display: inline-block;
 			  position: absolute;
@@ -127,7 +127,7 @@
 		  background-color: #b2dfdb; }
 
 		.filtswitch > [type="checkbox"]:not(:checked) + label:after {
-		  background-color: #f7f7f7; } /*was dddddd*/
+		  background-color: #d2d2d2; }
 
 		.filtswitch > [type="checkbox"]:checked + label + .filtswitch-knob {
 		  right: 5px;
@@ -311,7 +311,7 @@ img {
 <p>The full visualization is available at <a href="http://yeethan.github.io/taxichart">http://yeethan.github.io/taxichart</a>, but a simplified version is shown below. The scatterplot shows the average hourly occupancy (y-axis) for every day in 2013, sorted by hour of the day (x-axis). Weekends and federal holidays are represented by upside-down triangles while non-holiday weekdays are represented with circles. Colors are used to represent weather condition (light blue = light rain; dark blue = heavy rain; orange = light snow; red = heavy snow). The sliders above the plot can be toggled to hide or show the datapoints in each category, and placing the cursor over any datapoint will reveal its date for easy identification of outliers and trends.</p>
 <h3>Interactive scatterplot</h3>
 <div id="filter">
-	<span class="filtswitch" style="padding-left:170px">
+	<span class="filtswitch" style="padding-left:180px">
 	   <input type="checkbox" id="wkday" name="v" value="0" checked>
 	   <label for="wkday">Weekday</label>
 	   <span class="filtswitch-knob"></span>
@@ -326,7 +326,7 @@ img {
 	   <label for="hrain" style="color:#13519E">Heavy Rain</label>
 	   <span class="filtswitch-knob"></span>
 	</span><br />
-	<span class="filtswitch" style="padding-left:52px">
+	<span class="filtswitch" style="padding-left:62px">
 	   <input type="checkbox" id="wkendhol" name="v" value="1" checked>
 	   <label for="wkendhol">Weekend/Federal Holiday</label>
 	   <span class="filtswitch-knob"></span>
@@ -344,7 +344,7 @@ img {
 </div><br />
 <div id="viz"></div>
 	<script type="text/javascript">
-		var w = 1000,
+		var w = 1050,
 			h = 580,
 			top_pad = 60,
 			left_pad = 50,
@@ -384,7 +384,7 @@ img {
 		    .data(dataSet)
 		    .enter().append("path")
 		    .attr("class", "dot")
-            .attr("transform", function(d) { return "translate(" + (x(getHour(parseTime(d.datetime))) + (Math.random() * 20 - 10)) + "," +  y(d.occupancy) + ")"; })
+            .attr("transform", function(d) { return "translate(" + (x(getHour(parseTime(d.datetime))) + (Math.random() * 18 - 9)) + "," +  y(d.occupancy) + ")"; })
 			.attr("d", function(d,i){
 				if (d.holWkend === "0") return symbolTypes.circle();
 				else return symbolTypes.triangleDown();
